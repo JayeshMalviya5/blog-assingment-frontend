@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import User from "./pages/User";
+import Landing from "./pages/Landing";
+import { Route, Routes } from "react-router-dom";
+import PrivateRoute from "./routes/PrivateRoute";
+import Upload from "./pages/Upload";
+import { Axios } from "./axios/axios";
+import { AppContext, AppContextProvider } from "./context/AppContext";
 
-function App() {
+
+const App = () => {
+  Axios.defaults.headers.common[
+    "Authorization"
+  ] = `Bearer ${localStorage.getItem("token")}`;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContextProvider>
+      <Routes>
+        <Route path="/" element={<PrivateRoute />}>
+          <Route path="/landing" element={<Landing />} />
+          <Route path="/create" element={<Upload />} />
+        </Route>
+        <Route path="/user" element={<User />} />
+      </Routes>
+    </AppContextProvider>
   );
-}
+};
 
 export default App;
