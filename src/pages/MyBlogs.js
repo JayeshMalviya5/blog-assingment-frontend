@@ -23,6 +23,7 @@ const MyBlogs = () => {
         "Authorization"
       ] = `Bearer ${localStorage.getItem("token")}`;
       const resp = await Axios.get("/myblogs");
+      console.log(resp.data);
       setMyBlogs(resp.data);
     } catch (error) {
       alert(error.message);
@@ -62,7 +63,7 @@ const MyBlogs = () => {
                 className="border-2 w-96 rounded-2xl shadow-2xl h-min-[600px] mb"
               >
                 <img
-                  src={item.file.path}
+                  src={`https://blogmernreactbackend.onrender.com/images/${item.file.name}`}
                   alt="hello"
                   className="rounded-lg shadow-lg w-auto h-[280px]"
                 />

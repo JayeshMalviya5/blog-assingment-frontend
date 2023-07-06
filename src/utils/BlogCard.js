@@ -3,7 +3,6 @@ import { AiOutlineDislike, AiOutlineLike } from 'react-icons/ai'
 import { FaRegComment } from 'react-icons/fa'
 import { Axios } from '../axios/axios'
 import { AppContext } from '../context/AppContext'
-
 export const BlogCard = ({item}) => {
     const {blogs,setBlogs} = useContext(AppContext)
 
@@ -33,7 +32,7 @@ export const BlogCard = ({item}) => {
   return (
     <div className="border-2 w-full  rounded-2xl shadow-2xl h-min-[600px] mb-0">
                 <img
-                  src={`https://localhost:8000/${item?.file.path}`}
+                  src={(`https://blogmernreactbackend.onrender.com/images/${item?.file.name}`)}
                   
                   alt="hello"
                   className="rounded-lg shadow-lg w-full h-[280px]"

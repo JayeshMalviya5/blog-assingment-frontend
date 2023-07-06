@@ -38,7 +38,7 @@ const CreateBlog = () => {
     isLoading(true)
     // Submit the form or perform any other actions here
     const formData = new FormData();
-
+// 
     formData.append("title", title);
     formData.append("file", file);
     formData.append("keywords", keywords);
