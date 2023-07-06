@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { BlogCard } from "../utils/BlogCard";
 import { AppContext } from "../context/AppContext";
 import { Axios } from "../axios/axios";
 import { FaRegComment } from "react-icons/fa";
 import { AiOutlineDislike, AiOutlineLike,AiOutlineClose } from "react-icons/ai";
-import loader from "../utils/loader.svg";
 import { CSSTransition } from "react-transition-group";
+
 const MyBlogs = () => {
   const [myBlogs, setMyBlogs] = useState([]);
   const [animate,isAnimate] = useState(false)
