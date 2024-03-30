@@ -62,7 +62,7 @@ const MyBlogs = () => {
                 className="border-2 w-96 rounded-2xl shadow-2xl h-min-[600px] mb"
               >
                 <img
-                  src={`https://blogmernreactbackend.onrender.com/images/${item.file.name}`}
+                  src={`http://localhost:8000/images/${item.file.name}`}
                   alt="hello"
                   className="rounded-lg shadow-lg w-auto h-[280px]"
                 />

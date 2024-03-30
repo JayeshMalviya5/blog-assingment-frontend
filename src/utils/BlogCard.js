@@ -32,7 +32,7 @@ export const BlogCard = ({item}) => {
   return (
     <div className="border-2 w-full  rounded-2xl shadow-2xl h-min-[600px] mb-0">
                 <img
-                  src={(`https://blogmernreactbackend.onrender.com/images/${item.file.name}`)}
+                  src={(`http://localhost:8000/images/${item.file.name}`)}
                   
                   alt="hello"
                   className="rounded-lg shadow-lg w-full h-[280px]"
